@@ -2,13 +2,13 @@ import streamlit as st
 import streamlit.components.v1 as components
 import pandas as pd
 from PIL import Image
-import os
 from send_email import send_email
+import os
 
 st.set_page_config(layout='wide')
 
 #-- Variables for files
-profile_pic = Image.open('images\profile.jpg')
+profile_pic = Image.open('images/profile.jpg')
 
 contact_details = f"""
 :phone: 07497 716 117\n
