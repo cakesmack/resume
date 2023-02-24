@@ -1,8 +1,8 @@
 import smtplib, ssl
-import credentials
+import streamlit as st
 
-user = credentials.username
-mypass = credentials.password
+user = st.secrets["username"]
+mypass = st.secrets['password']
 
 def send_email(message):
     host = 'smtp.gmail.com'
