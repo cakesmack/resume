@@ -15,8 +15,8 @@ contact_details = f"""
 :email: cmack6189@gmail.com\n
 """
 
-certificates = pd.read_csv('assets\certificates.csv')
-experience = pd.read_csv('assets\Book1.csv')
+certificates = pd.read_csv('assets/certificates.csv')
+experience = pd.read_csv('assets/Book1.csv')
 
 #-- Sidebar
 with st.sidebar:
@@ -26,7 +26,7 @@ with st.sidebar:
     st.caption(contact_details)
 
     #-- Load CV pdf file and make available for download.
-    with open('assets\cv.pdf', "rb") as f:
+    with open('assets/cv.pdf', "rb") as f:
         pdf = f.read() 
     st.download_button('Download C.V. in as a PDF File.', data=pdf,file_name='Craig Mackenzie CV', mime='application/octet-stream')
     
