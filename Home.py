@@ -56,7 +56,7 @@ with col1:
     st.image(profile_pic, use_column_width=True)
 
 my_profile = '''
-    For the past 3 years I have been managing a small hotel in a stunning location on the west coast of Scotland. As this recent position was seasonal, it has allowed me time over the winter to do some travelling, while at the same time developing IT skills I have gained over the years as a hobby. I have completed several online courses in various areas, which you will see listed below, in hopes of moving away from the hospitality industry. 
+    Ramble on a load of shite about what I'm doing and what I want to do. Make it sound appealing to some cunt bag that might hire me!
 '''
 
 with col2:
