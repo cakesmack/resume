@@ -5,23 +5,18 @@ from PIL import Image
 import os
 from send_email import send_email
 
-
 st.set_page_config(layout='wide')
 
 #-- Variables for files
 profile_pic = Image.open('images\profile.jpg')
-cv_file = 'images\cv.pdf'
-resume = os.path.basename(cv_file)
+
 contact_details = f"""
-:phone: 07497716117\n
+:phone: 07497 716 117\n
 :email: cmack6189@gmail.com\n
 """
 
-
-
 certificates = pd.read_csv('assets\certificates.csv')
 experience = pd.read_csv('assets\Book1.csv')
-
 
 #-- Sidebar
 with st.sidebar:
@@ -29,10 +24,15 @@ with st.sidebar:
     st.title('Craig Mackenzie ')
     st.subheader('Digital C.V.')
     st.caption(contact_details)
-    st.download_button('Download my CV in PDF Format',data=resume,file_name=resume, use_container_width=True)
 
-    st.header('Contact Me')
+    #-- Load CV pdf file and make available for download.
+    with open('assets\cv.pdf', "rb") as f:
+        pdf = f.read() 
+    st.download_button('Download C.V. in as a PDF File.', data=pdf,file_name='Craig Mackenzie CV', mime='application/octet-stream')
+    
 
+    st.header('Get In Touch')
+    #-- Contact Form.
     with st.form(key='contact'):
         name = st.text_input('Name')
         user_email = st.text_input('E-mail Address')
@@ -49,39 +49,36 @@ with st.sidebar:
             st.info('Email sent succesfuly.')
 
 
-
-
-
 col1, col2 = st.columns(2, gap='small')
 
-#-- Hero Section
+#-- Profile Section
 with col1:
     st.image(profile_pic, width=400)
 
-#-- Profile Section
 my_profile = '''
     For the past 3 years I have been managing a small hotel in a stunning location on the west coast of Scotland. As this recent position was seasonal, it has allowed me time over the winter to do some travelling, while at the same time developing IT skills I have gained over the years as a hobby. I have completed several online courses in various areas, which you will see listed below, in hopes of moving away from the hospitality industry. 
 '''
 
 with col2:
-    st.title('Personal Profile')
+    st.header('Craig Mackenzie')
+    st.subheader('Digital C.V.')
     st.write(my_profile)
+
 
 #-- tab section
 tab1, tab2, tab3, tab4,= st.tabs(["Work History", "Certificates & Skills", "Other Relevant Info", "Projects"])
 
+#-- Work History
 with tab1:
-    with st.container():
-        st.header('Work History')
-        
+    col3, col4, col5 = st.columns([0.5,3,0.5])
+    with col4:        
         for i, row in experience.iterrows():
-
             with st.expander(row['employer'] + ' - ' + row['role']):
                 st.caption(row['date'])
                 st.write(row['task'])
                 st.write(row['task2'])
  
-
+#-- Certificates
 with tab2:
     st.header('Certificates & Skills')
     col3, col4 = st.columns(2, gap='large')
@@ -103,6 +100,7 @@ with tab2:
                 st.caption(f"Credential ID: {row['credential id']}")
                 st.caption(f"Link To Certificate: {row['certificate link']}")
                 st.write(row['desc'])
+
 
 with tab3:
     st.write('Coming Soon')
