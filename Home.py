@@ -28,7 +28,7 @@ with st.sidebar:
     #-- Load CV pdf file and make available for download.
     with open('assets/cv.pdf', "rb") as f:
         pdf = f.read() 
-    st.download_button('Download C.V. in as a PDF File.', data=pdf,file_name='Craig Mackenzie CV', mime='application/octet-stream')
+    st.download_button('Download C.V. as a PDF File.', data=pdf,file_name='Craig Mackenzie CV', mime='application/octet-stream')
     
 
     st.header('Get In Touch')
@@ -80,7 +80,6 @@ with tab1:
  
 #-- Certificates
 with tab2:
-    st.header('Certificates & Skills')
     col3, col4 = st.columns(2, gap='large')
 
     for i, row in certificates.iterrows():
