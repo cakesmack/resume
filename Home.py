@@ -3,7 +3,7 @@ import streamlit.components.v1 as components
 import pandas as pd
 from PIL import Image
 from send_email import send_email
-import os
+from funcs import certificates
 
 st.set_page_config(layout='wide')
 
@@ -85,24 +85,10 @@ with tab2:
     for i, row in certificates.iterrows():
         if i % 2 == 0:
             with col3:
-                cert_image = Image.open(row['image'])
-                st.subheader(row['course'])
-                st.image(cert_image, use_column_width=True)
-                st.caption(f"Issue Date: {row['issue date']}")
-                st.caption(f"Issuing Organization: {row['organisation']}")
-                st.caption(f"Credential ID: {row['credential id']}")
-                st.caption(f"Link To Certificate: {row['certificate link']}")
-                st.write(row['desc'])
+                certificates()
         else:
             with col4:
-                cert_image = Image.open(row['image'])
-                st.subheader(row['course'])
-                st.image(cert_image, use_column_width=True)
-                st.caption(f"Issue Date: {row['issue date']}")
-                st.caption(f"Issuing Organization: {row['organisation']}")
-                st.caption(f"Credential ID: {row['credential id']}")
-                st.caption(f"Link To Certificate: {row['certificate link']}")
-                st.write(row['desc'])
+                certificates()
 
 
 with tab3:
