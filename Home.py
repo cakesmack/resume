@@ -84,8 +84,8 @@ with tab2:
 
     for i, row in certificates.iterrows():
         if i % 2 == 0:
-            cert_image = Image.open(row['image'])
             with col3:
+                cert_image = Image.open(row['image'])
                 st.subheader(row['course'])
                 st.image(cert_image, use_column_width=True)
                 st.caption(f"Issue Date: {row['issue date']}")
@@ -95,6 +95,7 @@ with tab2:
                 st.write(row['desc'])
         else:
             with col4:
+                cert_image = Image.open(row['image'])
                 st.subheader(row['course'])
                 st.image(cert_image, use_column_width=True)
                 st.caption(f"Issue Date: {row['issue date']}")
