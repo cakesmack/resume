@@ -85,10 +85,24 @@ with tab2:
     for i, row in certificates.iterrows():
         if i % 2 == 0:
             with col3:
-                certificates()
+                cert_image = Image.open(row['image'])
+                st.subheader(row['course'])
+                st.image(cert_image, use_column_width=True)
+                st.caption(f"Issue Date: {row['issue date']}")
+                st.caption(f"Issuing Organization: {row['organisation']}")
+                st.caption(f"Credential ID: {row['credential id']}")
+                st.caption(f"Link To Certificate: {row['certificate link']}")
+                st.write(row['desc'])
         else:
             with col4:
-                certificates()
+                cert_image = Image.open(row['image'])
+                st.subheader(row['course'])
+                st.image(cert_image, use_column_width=True)
+                st.caption(f"Issue Date: {row['issue date']}")
+                st.caption(f"Issuing Organization: {row['organisation']}")
+                st.caption(f"Credential ID: {row['credential id']}")
+                st.caption(f"Link To Certificate: {row['certificate link']}")
+                st.write(row['desc'])
 
 
 with tab3:
