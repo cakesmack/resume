@@ -3,7 +3,6 @@ import streamlit.components.v1 as components
 import pandas as pd
 from PIL import Image
 from send_email import send_email
-from funcs import certificates
 
 st.set_page_config(layout='wide')
 
