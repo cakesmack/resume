@@ -86,6 +86,8 @@ with tab2:
         if i % 2 == 0:
             with col3:
                 st.subheader(row['course'])
+                ibm_cert = Image.open('images/ibm.jpeg')
+                st.image(ibm_cert)
                 st.caption(f"Issue Date: {row['issue date']}")
                 st.caption(f"Issuing Organization: {row['organisation']}")
                 st.caption(f"Credential ID: {row['credential id']}")
