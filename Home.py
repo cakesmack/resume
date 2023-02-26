@@ -107,4 +107,5 @@ with tab3:
     col5, col6, col7 = st.columns(3, gap='medium')
     with col5:
         st.title('Digital C.V. Web App')
-        st.write(f"This digital C.V. was created using the Python programming language, and deployed using Streamlt. Streamlit is an open source framework based on Python. Its main puropse it to build and dispaly Data Science web apps.")
+        st.write(f"I created the digital C.V. you are viewing now using the Python and various Pytho libraries. To create the web app itself, I used Streamlit which is a Python based framwork primarily used for creating Machine Learning and Data Science web apps.")
+        st.write(f"Most of the data displayed on this web app is stored in .CSV files from which I extracted the data using the Pandas Python library to sort and display the relevant information.")
