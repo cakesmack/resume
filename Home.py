@@ -65,10 +65,10 @@ with col2:
 
 
 #-- tab section
-tab1, tab2, tab3, tab4,= st.tabs(["Work History", "Certificates & Skills", "Other Relevant Info", "Projects"])
+tab1, tab2, tab3= st.tabs(["Work History", "Certificates & Skills", "Projects"])
 
 #-- Work History
-with tab1:
+with tab2:
     col3, col4, col5 = st.columns([0.5,3,0.5])
     with col4:        
         for i, row in experience.iterrows():
@@ -77,7 +77,7 @@ with tab1:
                 st.write(row['description'])
  
 #-- Certificates
-with tab2:
+with tab1:
     col3, col4 = st.columns(2, gap='large')
 
     for i, row in certificates.iterrows():
@@ -105,6 +105,3 @@ with tab2:
 
 with tab3:
     st.write('Coming Soon')
-
-with tab4:
-    st.write('also coming soon')
