@@ -104,4 +104,7 @@ with tab1:
 
 
 with tab3:
-    st.write('Coming Soon')
+    col5, col6, col7 = st.columns(3, gap='medium')
+    with col5:
+        st.title('Digital C.V. Web App')
+        st.write(f"This digital C.V. was created using the Python programming language, and deployed using Streamlt. Streamlit is an open source framework based on Python. Its main puropse it to build and dispaly Data Science web apps.")
