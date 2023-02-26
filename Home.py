@@ -65,7 +65,7 @@ with col2:
 
 
 #-- tab section
-tab1, tab2, tab3= st.tabs(["Work History", "Certificates & Skills", "Projects"])
+tab1, tab2, tab3= st.tabs(["Skills & Certificates", "Employment History", "Projects"])
 
 #-- Work History
 with tab2:
