@@ -75,7 +75,7 @@ with tab1:
             with st.expander(row['employer'] + ' - ' + row['role']):
                 st.caption(row['date'])
                 st.write(row['description'])
-1 
+ 
 #-- Certificates
 with tab2:
     col3, col4 = st.columns(2, gap='large')
