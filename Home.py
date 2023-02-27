@@ -7,7 +7,7 @@ from send_email import send_email
 st.set_page_config(layout='wide')
 
 #-- Variables for files
-profile_pic = Image.open('images/profile_pic.jpg')
+profile_pic = Image.open('images/profile-pic.jpg')
 
 contact_details = f"""
 :phone: 07497 716 117\n
