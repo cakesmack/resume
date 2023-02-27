@@ -48,10 +48,12 @@ with st.sidebar:
             st.info('Email sent succesfuly.')
 
 
-col1, col2 = st.columns(2, gap='small')
+col1, col2, col3 = st.columns(.75,.75,2, gap='small')
 
 #-- Profile Section
 with col1:
+    print('')
+with col2:
     st.image(profile_pic, width=200)
 
 my_profile = '''
