@@ -7,7 +7,7 @@ from send_email import send_email
 st.set_page_config(layout='wide')
 
 #-- Variables for files
-profile_pic = Image.open('images/profile.jpg')
+profile_pic = Image.open('images/profile_pic.jpg')
 
 contact_details = f"""
 :phone: 07497 716 117\n
@@ -25,7 +25,7 @@ with st.sidebar:
     st.caption(contact_details)
 
     #-- Load CV pdf file and make available for download.
-    with open('assets/cv.pdf', "rb") as f:
+    with open('assets/Craig_Mackenzie_CV.pdf', "rb") as f:
         pdf = f.read() 
     st.download_button('Download C.V. as a PDF File.', data=pdf,file_name='Craig Mackenzie CV', mime='application/octet-stream')
     
