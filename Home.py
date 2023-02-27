@@ -48,7 +48,7 @@ with st.sidebar:
             st.info('Email sent succesfuly.')
 
 
-col1, col2, col3 = st.columns(.75,.75,2, gap='small')
+col1, col2, col3 = st.columns([.75,.75,2], gap='small')
 
 #-- Profile Section
 with col1:
