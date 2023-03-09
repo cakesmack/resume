@@ -6,8 +6,9 @@ from send_email import send_email
 
 st.set_page_config(layout='wide')
 
+
 #-- Variables for files
-profile_pic = Image.open('images/profile-pic.jpg')
+port_image = Image.open('images/port.jpg')
 
 contact_details = f"""
 :phone: 07497 716 117\n
@@ -48,21 +49,28 @@ with st.sidebar:
             st.info('Email sent succesfuly.')
 
 
-col1, col2, col3 = st.columns([.75,.75,2], gap='small')
+
+col1, col2= st.columns([.4,.6], gap='small')
 
 #-- Profile Section
+
 with col1:
-    print('')
-with col2:
-    st.image(profile_pic, width=200)
+    st.header('Craig Mackenzie')
+    st.subheader('Digital C.V.')
+    st.caption('If you prefer a more traiditional C.V. format, you can download a PDF version of my C.V. in the sidebar to the left.')
 
 my_profile = '''
     For the past 3 years I have been managing a small hotel in a stunning location on the west coast of Scotland. As this recent position was seasonal, it has allowed me time over the winter to do some travelling, while at the same time developing IT skills I have gained over the years as a hobby. I have completed several online courses in various areas, which you will see listed below, in hopes of moving away from the hospitality industry. 
+
+    My interest in IT was first peaked back in the days of Macromedia Flash when some friends and I would create small animations for fun. This lead me on to learning some code such as Action Script and Visual Basic. From there I discovered website design and development which I still practice as a hobby to this day. I have created some small websites for friends businesses over the years, including a Tatto Studio, an oil provider, and spent a lot of my time during lockdown working on a website for a local Forestry Surveying company. 
+
+    In more recent years I have been concentrating on Python. I have found there is very little you can not do with Python. Some of the projects I have made using Python include a .PDF converter, a web scraper for an estate agent that displays properties on Google Maps, and this Digital CV you are viewing now. I am in the process of creating a web app that acts as a dashboard, displaying local news and weather information, and a task tracker.
+
+
 '''
 
 with col2:
-    st.header('Craig Mackenzie')
-    st.subheader('Digital C.V.')
+    
     st.write(my_profile)
 
 
@@ -106,8 +114,9 @@ with tab1:
 
 
 with tab3:
-    col5, col6, col7 = st.columns(3, gap='medium')
+    col5, col6, col7 = st.columns(3, gap='small')
     with col5:
         st.title('Digital C.V. Web App')
-        st.write(f"I created the digital C.V. you are viewing now using the Python and various Pytho libraries. To create the web app itself, I used Streamlit which is a Python based framwork primarily used for creating Machine Learning and Data Science web apps.")
+        st.image(port_image, use_column_width=True)
+        st.write(f"I created my digital CV web appusing Streamlit which is a Python based framwork primarily used for creating Machine Learning and Data Science web apps.")
         st.write(f"Most of the data displayed on this web app is stored in .CSV files from which I extracted the data using the Pandas Python library to sort and display the relevant information.")
