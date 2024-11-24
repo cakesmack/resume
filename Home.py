@@ -9,6 +9,7 @@ st.set_page_config(layout='wide')
 
 #-- Variables for files
 port_image = Image.open('images/port.jpg')
+number27_image = Image.open('images/number27.png')
 
 contact_details = f"""
 :phone: 07497 716 117\n
@@ -19,7 +20,7 @@ certificates = pd.read_csv('assets/certificates.csv')
 experience = pd.read_csv('assets/history.csv')
 
 #-- Sidebar
-with st.sidebar:
+with st.sidebar: 
     
     st.title('Craig Mackenzie ')
     st.subheader('Digital C.V.')
@@ -60,11 +61,11 @@ with col1:
     st.caption('If you prefer a more traiditional C.V. format, you can download a PDF version of my C.V. in the sidebar to the left.')
 
 my_profile = '''
-    For the past 3 years I have been managing a small hotel in a stunning location on the west coast of Scotland. As this recent position was seasonal, it has allowed me time over the winter to do some travelling, while at the same time developing IT skills I have gained over the years as a hobby. I have completed several online courses in various areas, which you will see listed below, in hopes of moving away from the hospitality industry. 
+    I am a versatile IT enthusiast and sales administrator at Highland Industrial Supplies with a strong passion for technology and web development. My journey in IT began with creating animations in Macromedia Flash, evolving into skills in coding and website design. Over the years, I’ve honed my expertise through hands-on projects, including building websites for local businesses such as a tattoo studio, an oil provider, and a forestry surveying company.
 
-    My interest in IT was first peaked back in the days of Macromedia Flash when some friends and I would create small animations for fun. This lead me on to learning some code such as Action Script and Visual Basic. From there I discovered website design and development which I still practice as a hobby to this day. I have created some small websites for friends businesses over the years, including a Tatto Studio, an oil provider, and spent a lot of my time during lockdown working on a website for a local Forestry Surveying company. 
+Recently, I launched a website for a local restaurant and am working on another project. I’ve also developed Python-based applications like a PDF converter, a web scraper integrated with Google Maps for real estate listings, and the digital CV you are viewing now. Currently, I am creating a dashboard web app to display local news, weather, and tasks.
 
-    In more recent years I have been concentrating on Python. I have found there is very little you can not do with Python. Some of the projects I have made using Python include a .PDF converter, a web scraper for an estate agent that displays properties on Google Maps, and this Digital CV you are viewing now. I am in the process of creating a web app that acts as a dashboard, displaying local news and weather information, and a task tracker.
+I’m seeking new challenges in data analysis, website development, or general IT roles where I can bring my technical skills and creative problem-solving abilities to the table.
 
 
 '''
@@ -116,7 +117,16 @@ with tab1:
 with tab3:
     col5, col6, col7 = st.columns(3, gap='small')
     with col5:
-        st.title('Digital C.V. Web App')
+        st.subheader('Digital C.V. Web App')
+        st.caption('Python | Streamlit | Pandas')
         st.image(port_image, use_column_width=True)
-        st.write(f"I created my digital CV web appusing Streamlit which is a Python based framwork primarily used for creating Machine Learning and Data Science web apps.")
+        st.write(f"I created my digital CV web app using Streamlit, a Python based framework primarily used for creating Machine Learning and Data Science web apps.")
         st.write(f"Most of the data displayed on this web app is stored in .CSV files from which I extracted the data using the Pandas Python library to sort and display the relevant information.")
+   
+    with col6:
+        st.subheader('Number 27 Bar & Kitchen')
+        st.caption('Webflow | Figma | Python | Photoshop')
+        st.image(number27_image, use_column_width=True)
+        st.write(f"My old employer asked me to give their website a facelift and gave me full control over the design. I started from scratch and gave the site a completely new look")
+        st.write(f"I created a prototype using Figma. Once I was happy with the design, i moved on to creating the site in Webflow. I wrote a Python script to conver the menu images from pdf to image files, and i used Photoshop for image edits. ")
+        st.write(f"When the site was nearly ready, I also implemented a popular online booking system for the restaurant. ")
